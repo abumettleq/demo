@@ -4,7 +4,10 @@ import { GeistSans } from "geist/font/sans"
 import { GeistMono } from "geist/font/mono"
 import { ThemeProvider } from "next-themes"
 import { PageTransition } from "@/components/page-transition"
+import { Toaster } from "@/components/ui/sonner"
+
 import "./globals.css"
+import { AuthProvider } from "@/middleware/api/auth_context"
 
 export const metadata: Metadata = {
   title: "Demo Website",
@@ -29,7 +32,10 @@ html {
       </head>
       <body>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <PageTransition>{children}</PageTransition>
+          <AuthProvider> {/* <-- wrap everything in AuthProvider */}
+            <PageTransition>{children}</PageTransition>
+            <Toaster />
+          </AuthProvider>
         </ThemeProvider>
       </body>
     </html>

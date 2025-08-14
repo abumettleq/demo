@@ -6,6 +6,7 @@ import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { ThemeToggle } from "@/components/theme-toggle"
 import { cn } from "@/lib/utils"
+import AuthButton from "./authbutton"
 
 const navigation = [
   { name: "Home", href: "/" },
@@ -61,6 +62,7 @@ export function Header() {
                 Get Started
               </Button>
             </motion.div>
+            <AuthButton/>
           </div>
         </div>
       </div>
